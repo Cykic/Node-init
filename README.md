@@ -8,6 +8,7 @@ To get started
 | --- | --- |---|
 | DATABASE | MongoDB url | true|
 | DATABASE_PASSWORD | MongoDB password | true |
+| NODE_ENV | development | true |
 | DOCUMENTATION_URL | url to documentation | false|
 
 Sample .env 

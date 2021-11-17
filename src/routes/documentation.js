@@ -6,7 +6,7 @@ const router = express.Router();
 router.all(
   '/',
   catchAsync(async (req, res, next) => {
-    res.redirect(process.env.POSTMAN_DOC);
+    res.redirect(process.env.DOCUMENTATION_URL);
   })
 );
 

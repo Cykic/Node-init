@@ -2,7 +2,7 @@
 Initialization Repo for Node, Express, MongoDB
 
 To get started
-> Create a `.env` file and add the following Environment variable
+> Create a `config.env` file and add the following Environment variable
 
 | Env variable | Description | Required |
 | --- | --- |---|

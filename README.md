@@ -13,6 +13,13 @@ To get started
 Sample .env 
 
 >DATABASE=mongodb://mongodb0.example.com:27017
+
 >DATABASE_PASSWORD=pass123
+
+Install Dependencies and Start Server from terminal
+
+> npm i
+
+> npm run dev (for development)
 
 

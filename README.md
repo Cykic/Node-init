@@ -20,6 +20,8 @@ Install Dependencies and Start Server from terminal
 
 > `npm i`
 
-> `npm run dev (for development)`
+> `npm run dev` (for development)
+
+> `npm start` (for production)
 
 

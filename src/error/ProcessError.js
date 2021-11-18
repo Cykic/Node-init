@@ -9,7 +9,7 @@ class ServerError {
     });
   }
 
-  //SIGTERM is a signal that is used to cause a program to stop running
+  //SIGTERM is a signal that is used to cause a program to stop process
   SIGTERM(server) {
     process.on('SIGTERM', () => {
       console.log('SIGTERM RECEIVED. Shutting down gracefully.');

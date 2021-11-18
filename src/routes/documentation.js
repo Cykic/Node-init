@@ -5,9 +5,9 @@ const router = express.Router();
 
 router.all(
   '/',
-  catchAsync(async (req, res, next) => {
+  async (_, res, ) => {
     res.redirect(process.env.DOCUMENTATION_URL);
-  })
+  }
 );
 
 module.exports = router;

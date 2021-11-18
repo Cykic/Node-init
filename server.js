@@ -1,40 +1,24 @@
 /* eslint-disable no-console */
 const dotenv = require('dotenv');
+const ProcessError = require('./src/error/ProcessError');
+const DB = require('./src/db/db');
 
 dotenv.config({ path: './config.env' });
 
-const MongoDB = require('./src/db/mongoDB');
-
-process.on('uncaughtException', err => {
-  console.log('UNCAUGHT EXCEPTION! 💥💥💥 Shutting down...');
-  console.log(err.name, err.message, err, err.stack);
-  process.exit(1);
-});
+const { DATABASE_URL, PORT } = process.env;
+// Exit process for UncaughtException
+ProcessError.unCaughtException();
+// Connect Mongo DB
+DB.connectMongoDB(DATABASE_URL);
 
 const app = require('./app');
 
-const port = process.env.PORT || 9090;
+const port = PORT || 3000;
 
 const server = app.listen(port, () => {
   console.log(`App running on port ${port}...`);
 });
-
-// Connect Mongo
-MongoDB();
-
-process.on('unhandledRejection', err => {
-  console.log('UNHANDLED REJECTION! 💥💥💥 Shutting down...');
-  console.log(err.name, err.message, err);
-  server.close(() => {
-    process.exit(1);
-  });
-});
-
-//SIGTERM is a signal that is used to cause a program to stop running
-process.on('SIGTERM', () => {
-  console.log('SIGTERM RECEIVED. Shutting down gracefully.');
-  server.close(() => {
-    console.log('💥💥💥 Process terminated!');
-  });
-});
+// Exit(1)
+ProcessError.unHandledRejection(server);
+ProcessError.SIGTERM(server);
 console.log(process.env.NODE_ENV);

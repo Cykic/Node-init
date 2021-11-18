@@ -24,4 +24,6 @@ Install Dependencies and Start Server from terminal
 
 > `npm start` (for production)
 
+> `npm test` (for tests) 
+
 

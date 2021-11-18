@@ -6,8 +6,7 @@ To get started
 
 | Env variable | Description | Required |
 | --- | --- |---|
-| DATABASE | MongoDB url | true|
-| DATABASE_PASSWORD | MongoDB password | true |
+| DATABASE_URL | MongoDB url | true|
 | NODE_ENV | development | true |
 | DOCUMENTATION_URL | url to documentation | false|
 
@@ -19,8 +18,12 @@ Sample .env
 
 Install Dependencies and Start Server from terminal
 
-> npm i
+> `npm i`
 
-> npm run dev (for development)
+> `npm run dev` (for development)
+
+> `npm start` (for production)
+
+> `npm test` (for tests) 
 
 
